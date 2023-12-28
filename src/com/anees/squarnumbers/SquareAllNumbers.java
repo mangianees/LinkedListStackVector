@@ -10,7 +10,7 @@ public class SquareAllNumbers {
 				square = n[i] * n[i];
 				tempString = tempString + Integer.toString(square) + "-";
 				}
-			return tempString;
+			return "Squares of array " + tempString;
 
 	  	}
 	  
@@ -26,8 +26,40 @@ public class SquareAllNumbers {
 				else
 					greatest = n[i+1];
 			}
-			return Integer.toString(lowest) + " " + Integer.toString(greatest);
+			return "Lowest= " + Integer.toString(lowest) + " " + "Greatest= " + Integer.toString(greatest);
 			
+	  }
+	  
+	  public String BubbleSort(int[] n) {
+		  
+			boolean swap;
+			int temp=0;
+			String NewStr="";
+			
+			for(int i=0;i<n.length - 1;i++)
+			{
+				swap=false;
+				for(int j=0;j<n.length -1;j++)
+				{
+						if(n[j]>n[j+1])
+						{
+							temp = n[j+1];
+							n[j+1]=n[j];
+							n[j]=temp;
+							swap= true;
+							
+						}
+				}
+				
+			if(swap==false)
+				break;
+			}
+			
+			for(int i=0;i<n.length;i++)
+				NewStr= NewStr + Integer.toString(n[i]);
+			return "Bubble Sorted Arrays " + NewStr;
+				
+
 	  }
 
 }
